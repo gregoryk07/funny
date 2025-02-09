@@ -1,14 +1,46 @@
+@property --header_background{
+    syntax: "<color>";
+    initial-value: #FFF4BC;
+    inherits: false;
+}
+@property --header_color{
+    syntax: "<color>";
+    initial-value: #6e5b48;
+    inherits: false;
+}
+@property --article_background{
+    syntax: "<color>";
+    initial-value: rgb(255, 170, 184);
+    inherits: false;
+}
+@property --article_link_background{
+    syntax: "<color>";
+    initial-value: rgb(255, 205, 214);
+    inherits: false;
+}
+@property --article_link_border{
+    syntax: "<color>";
+    initial-value: white;
+    inherits: false;
+}
+@property --article_link_color{
+    syntax: "<color>";
+    initial-value: #6e5b48;
+    inherits: false;
+}
 *{
     font-family: Helvetica, Arial, sans-serif;
 }
 body{
     background-color: darkslategray;
+    padding-bottom: 130px;
 }
 header{
     background-color: blue;
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
+    border: 5px solid darkblue;
 }
 article{
     background-color: orange;
@@ -25,4 +57,58 @@ article a{
     padding: 20px 30px;
     border-radius: 30px;
     border: 5px solid orangered;
+}
+#pink_mode:checked ~ header{
+    background-color: var(--header_background);
+    color: var(--header_color);
+    border: 5px solid white;
+}
+#pink_mode:checked ~ article{
+    background-color: var(--article_background);
+    color: var(--header_color);
+}
+#pink_mode:checked ~ article a{
+    background-color: var(--article_link_background);
+    border-color: var(--article_link_border);
+    color: var(--article_link_color);
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 80px);
+    background-color: blue;
+    height: 100px;
+    margin: 5px;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 5px solid darkblue;
+    text-align: center;
+}
+#pink_mode:checked ~ footer{
+    background-color: var(--header_background);
+    border: 5px solid white;
+    color: var(--header_color);
+}
+#pink_label{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 20px;
+    border: 5px solid darkblue;
+    color: darkblue;
+    cursor: pointer;
+}
+#pink_mode:checked ~ footer > #pink_label{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: pink;
+    border-radius: 20px;
+    border: 5px solid white;
+    color: #6e5b48;
+    cursor: pointer;
 }

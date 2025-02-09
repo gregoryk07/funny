@@ -5,6 +5,14 @@
 <link rel="stylesheet" href="main.css">
 </head>
 <body>
+<input type="checkbox" id="pink_mode" style="display: none;">
+<script>
+  const searchParams = new URLSearchParams(window.location.search);
+  
+  console.log(searchParams.has("pink"));
+  document.getElementById("pink_mode").checked = searchParams.has("pink");
+  document.body.style.backgroundColor = searchParams.has("pink") ? "pink" : "darkslategray";
+  </script>
 <header>
 <h1>Welcome</h1>
 <p>This is a main website to put stuff meant for jokes and fun</p>
@@ -14,5 +22,20 @@
   <a href="bfmanual.html">BF manual</a><br>
   <a href="bfmanual-limitededition.html">BF - Limited Edition manual</a>
 </article>
+<footer>
+  <p>© 2025 Fun stuff</p>
+  <label id="pink_label" for="pink_toggler">Pink mode</label>
+  <input style="display: none" type="checkbox" id="pink_toggler" onclick="window.location.search = searchParams.has('pink') ? '' : 'pink';">
+</footer>
+<script>
+  
+  console.log(searchParams.has("pink"));
+  if(searchParams.has("pink")){
+    document.getElementById("pink_label").innerHTML = "Exit pink mode";
+  }
+  else{
+    document.getElementById("pink_label").innerHTML = "Enter pink mode";
+  }
+  </script>
 </body>
 </html>
