@@ -1,3 +1,200 @@
+@property --header_background{
+    syntax: "<color>";
+    initial-value: #FFF4BC;
+    inherits: false;
+}
+@property --header_color{
+    syntax: "<color>";
+    initial-value: #6e5b48;
+    inherits: false;
+}
+@property --article_background{
+    syntax: "<color>";
+    initial-value: rgb(255, 170, 184);
+    inherits: false;
+}
+@property --article_link_background{
+    syntax: "<color>";
+    initial-value: rgb(255, 205, 214);
+    inherits: false;
+}
+@property --article_link_border{
+    syntax: "<color>";
+    initial-value: white;
+    inherits: false;
+}
+@property --article_link_color{
+    syntax: "<color>";
+    initial-value: #6e5b48;
+    inherits: false;
+}
+.nopink{
+    display: block;
+}
+.pink{
+    display: none;
+}
+#pink_mode:checked ~ .nopink{
+    display: none;
+}
+#pink_mode:checked ~ * .nopink{
+    display: none;
+}
+#pink_mode:checked ~ .pink{
+    display: block;
+}
+#pink_mode:checked ~ * .pink{
+    display: block;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 80px);
+    background-color: blue;
+    height: 100px;
+    margin: 5px;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 5px solid darkblue;
+    text-align: center;
+}
+#pink_mode:checked ~ footer{
+    background-color: var(--header_background);
+    border: 5px solid white;
+    color: var(--header_color);
+}
+#pink_label{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 20px;
+    border: 5px solid darkblue;
+    color: darkblue;
+    cursor: pointer;
+}
+#pink_mode:checked ~ footer > #pink_label{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: pink;
+    border-radius: 20px;
+    border: 5px solid white;
+    color: #6e5b48;
+    cursor: pointer;
+}
+body{
+    background-color: darkslategray;
+    padding-bottom: 130px;
+}
 *{
     font-family: Helvetica, Arial, sans-serif;
+}
+nav{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 5px solid darkblue;
+}
+nav a{
+    text-decoration: none;
+    color: inherit;
+}
+#pink_mode:checked ~ nav{
+    background-color: var(--header_background);
+    color: var(--header_color);
+    border: 5px solid white;
+}
+header{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 5px solid darkblue;
+}
+article{
+    background-color: orange;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 20px 30px;
+    color: white;
+}
+article a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    background-color: red;
+    padding: 20px 30px;
+    border-radius: 30px;
+    border: 5px solid orangered;
+}
+#pink_mode:checked ~ header{
+    background-color: var(--header_background);
+    color: var(--header_color);
+    border: 5px solid white;
+}
+#pink_mode:checked ~ article{
+    background-color: var(--article_background);
+    color: var(--header_color);
+}
+#pink_mode:checked ~ article a{
+    background-color: var(--article_link_background);
+    border-color: var(--article_link_border);
+    color: var(--article_link_color);
+}
+.warning{
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 20px 30px;
+}
+.warning::before{
+    content: "❗";
+    background-color: yellow;
+    padding: 6px 4px;
+    margin-right: 3px;
+    border-radius: 50%;
+}
+#pink_mode:checked ~ * .warning{
+    background-color: rgb(255, 49, 84);
+    color: var(white);
+}
+.note{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 20px 30px;
+}
+#pink_mode:checked ~ * .note{
+    background-color: var(--header_background);
+    color: var(--header_color);
+}
+.note::before{
+    content: "📝";
+    background-color: yellow;
+    padding: 6px 4px;
+    margin-right: 3px;
+    border-radius: 50%;
+}
+header a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    background-color: orange;
+    width: 400px;
+    padding: 20px 30px;
+    border-radius: 30px;
+    margin: 10px 20px;
+    border: 5px solid orangered;
+}
+#pink_mode:checked ~ header a{
+    background-color: var(--article_link_background);
+    border-color: var(--article_link_border);
+    color: var(--article_link_color);
 }

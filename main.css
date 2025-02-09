@@ -33,7 +33,7 @@
 }
 body{
     background-color: darkslategray;
-    padding-bottom: 130px;
+    padding-bottom: 150px;
 }
 header{
     background-color: blue;
@@ -111,4 +111,22 @@ footer{
     border: 5px solid white;
     color: #6e5b48;
     cursor: pointer;
+}
+.nopink{
+    display: block;
+}
+.pink{
+    display: none;
+}
+#pink_mode:checked ~ .nopink{
+    display: none;
+}
+#pink_mode:checked ~ * .nopink{
+    display: none;
+}
+#pink_mode:checked ~ .pink{
+    display: block;
+}
+#pink_mode:checked ~ * .pink{
+    display: block;
 }

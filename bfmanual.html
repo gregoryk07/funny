@@ -5,12 +5,110 @@
 <link rel="stylesheet" href="manual.css">
 </head>
 <body>
+    <input type="checkbox" id="pink_mode" style="display: none;">
+<script>
+    const searchParams = new URLSearchParams(window.location.search);
+    
+    console.log(searchParams.has("pink"));
+    document.getElementById("pink_mode").checked = searchParams.has("pink");
+    document.body.style.backgroundColor = searchParams.has("pink") ? "pink" : "darkslategray";
+</script>
+
     <nav id="mainnav">
-        <a href="index.html">Go back  &lt;-</a>
+        <a class="nopink" href="index.html">Go back  &lt;-</a>
+        <a class="pink" href="index.html?pink">Go back  &lt;-</a>
     </nav>
-
-<h1>BF manual here</h1>
-<p>To be created someday</p>
-
+    <br>
+    <header>
+        <h1>Boyfriend manual</h1>
+        <a href="#p1">Part 1: How to turn his attention towards you.</a>
+        <a href="#p2">Part 2: How to turn his attention away from you.</a>
+        <a href="#p3">Part 3: How to cheer him up</a>
+        <a href="#p4">Part 4: Checking up on him</a>
+        <a href="#p_faq">FAQ</a>
+    </header>
+    <article id="p1">
+        <h2>Part 1: How to turn his attention towards you.</h2>
+        <ul>
+            <li>
+                <h3>Option 1</h3>
+                <p>Say his name</p>
+            </li>
+            <li>
+                <h3>Option 2</h3>
+                <p>Ask them a question</p>
+            </li>
+            <li>
+                <h3>Option 3</h3>
+                <p>Yell</p>
+            </li>
+            <li>
+                <h3>Option 4</h3>
+                <p>Pretend to be in trouble <span class="note">NOTE: Actually being in trouble also works</span></p>
+            </li>
+        </ul>
+    </article>
+    <article id="p2">
+        <h2>Part 2: How to turn his attention away from you.</h2>
+        <ul>
+            <li>
+                <h3>Option 1</h3>
+                <p>Give him a toy to play with</p>
+            </li>
+            <li>
+                <h3>Option 2</h3>
+                <p>Give him a task to do</p>
+            </li>
+        </ul>
+    </article>
+    <article id="p3">
+        <h2>Part 3: How to cheer him up</h2>
+        <ul>
+            <li>
+                <h3>Option 1</h3>
+                <p>Compliment him</p>
+            </li>
+            <li>
+                <h3>Option 2</h3>
+                <p>Hug/kiss/pat him</p>
+            </li>
+        </ul>
+    </article>
+    <article id="p4">
+        <h2>Part 4: Checking up on him</h2>
+        <p>Since he can be rather sensitive it is recomended to talk with him slowly and with understanding.</p> <p><span class="warning">WARNING: if he gets angry it is all on you. (We are not responsible for crying/panic attacks and he might either 1: hide, 2: attack (in some cases))</span></p>
+    </article>
+    <article id="p_faq">
+        <h2>FAQ</h2>
+        <ul>
+            <li>
+                <h3>Q: My boyfriend is nerdy as ****, is there a way to change it?!?</h3>
+                <p>A: No there's not, it is his main feature.</p>
+            </li>
+            <li>
+                <h3>Q: I told him to leave, when will he come back?</h3>
+                <p>Nobody knows ¯\_(ツ)_/¯. He will come back sometime later though.</p>
+            </li>
+            <li>
+                <h3>Q: My boyfriend has an attitude. What can i do with it?</h3>
+                <p>For the wellbeing of your boyfriend the following method is not recomended: <br> Smack the **** out of him.</p>
+            </li>
+        </ul>
+    </article>
+<footer>
+    <p>© 2025 Fun stuff</p>
+    <label id="pink_label" for="pink_toggler">Pink mode</label>
+    <input style="display: none" type="checkbox" id="pink_toggler" onclick="window.location.search = searchParams.has('pink') ? '' : 'pink';">
+  </footer>
+  <script>
+    
+    console.log(searchParams.has("pink"));
+    if(searchParams.has("pink")){
+      document.getElementById("pink_label").innerHTML = "Exit pink mode";
+    }
+    else{
+      document.getElementById("pink_label").innerHTML = "Enter pink mode";
+    }
+    </script>
 </body>
 </html>
