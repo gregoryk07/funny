@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important question frfr</title>
+    <link rel="stylesheet" href="question.css">
+</head>
+<body>
+    <script>
+        let step = 0;
+        function showQuestion(){
+            document.getElementById("1").style.display = "none";
+            document.getElementById("2").style.display = "block";
+        }
+        function no(){
+            if(step == 0){
+                document.getElementById("no").innerHTML = "pls";
+            }
+            else if(step == 1){
+                document.getElementById("no").innerHTML = "im desperate";
+            }
+            else if(step == 2){
+                document.getElementById("no").innerHTML = "i'll do anything really";
+            }
+            else if(step >= 7 && step <= 8){
+                document.getElementById("no").innerHTML = "why do you hate me";
+            }
+            else if(step == 10){
+                document.getElementById("no").innerHTML = "can i ask again?";
+            }
+            else if(step == 15){
+                nodone();
+            }
+            else{
+                document.getElementById("no").innerHTML = "plsplsplsplspls";
+            }
+            step++;
+        }
+        function nodone(){
+            document.getElementById("2").style.display = "none";
+            document.getElementById("5").style.display = "block";
+        }
+        function yes(){
+            document.getElementById("2").style.display = "none";
+            document.getElementById("3").style.display = "block";
+        }
+        function yesred(){
+            document.getElementById("2").style.display = "none";
+            document.getElementById("4").style.display = "block";
+        }
+    </script>
+    <section id="1">
+        <div class="group">
+            <h1>A very important question...</h1>
+            <a href="#" onclick="showQuestion()">SHOW ME</a>
+        </div>
+    </section>
+    <section id="2" style="display: none;">
+        <div class="group">
+            <h1>Will you be my valentine?</h1>
+                <div class="agroup">
+                    <a href="#" style="background-color: green;" onclick="yes()">YES</a><a href="#" style="background-color: red;" onclick="yesred()">YES&nbsp;but&nbsp;in&nbsp;red</a>
+                </div>
+            </div>
+        <footer><a href="#" id="no" onclick="no()">no</a></footer>
+    </section>
+    <section id="3" style="display: none;">
+        <div class="group">
+            <h1>YAYAYAYAYYA YIPPIEPIEPE</h1>
+        </div>
+    </section>
+    <section id="4" style="display: none;">
+        <div class="group">
+            <h1>YAYAYAYAYYA YIPPIEPIEPE</h1>
+            <p>u fell for it :3</p>
+        </div>
+    </section>
+    <section id="5" style="display: none;">
+        <div class="group">
+            <h1>D:</h1>
+        </div>
+    </section>
+</body>
+</html>
