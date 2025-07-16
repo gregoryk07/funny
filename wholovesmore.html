@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who loves more today?</title>
+</head>
+<body>
+    <div>
+        <h1>Today as of <span id="date"></span><br><span id="who"></span> loves <span id="whonot"></span> more &lt;3</h1>
+    </div>
+</body>
+<script>
+    // create Date object for current location
+var date = new Date();
+
+// convert to milliseconds, add local time zone offset and get UTC time in milliseconds
+var utcTime = date.getTime() + (date.getTimezoneOffset() * 60000);
+
+var timeOffset = -2;
+
+// create new Date object for a different timezone using supplied its GMT offset.
+var PolandTime = new Date(utcTime + (3600000 * timeOffset));
+
+var weekday = "";
+
+var sheloveshim = false;
+    // document.getElementById("date").innerText = PolandTime;
+    
+    switch(PolandTime.getDay()){
+        case 1:
+            sheloveshim = false;
+            weekday = "Monday";
+            break;
+        case 2:
+            sheloveshim = true;
+            weekday = "Tuesday";
+            break;
+        case 3:
+            sheloveshim = false;
+            weekday = "Wednesday";
+            break;
+        case 4:
+            sheloveshim = false;
+            weekday = "Thursday";
+            break;
+        case 5:
+            sheloveshim = false;
+            weekday = "Friday";
+            break;
+        case 6:
+            sheloveshim = true;
+            weekday = "Saturday";
+            break;
+        case 7:
+            sheloveshim = true;
+            weekday = "Sunday";
+            break;
+    }
+        document.getElementById("date").innerHTML = weekday + "<br>("+ PolandTime +")";
+        if(sheloveshim){
+            document.getElementById("who").innerText = "She";
+            document.getElementById("whonot").innerText = "him";
+        }
+        else{
+            document.getElementById("who").innerText = "He";
+            document.getElementById("whonot").innerText = "her";
+        }
+</script>
+</html>
