@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who loves more today?</title>
-    <meta http-equiv="refresh" content="5">
+    <!-- <meta http-equiv="refresh" content="5"> -->
 </head>
 <body>
     <div>
@@ -12,6 +12,14 @@
     </div>
 </body>
 <script>
+
+var offset_d = 0;
+function DateDiff(date1, date2){
+    var res=((date1.getTime() - date2.getTime())/1000/60/60/24)-offset_d;
+    var full_days=Math.floor(res/365.25);
+    var f1=Math.round((res%365.25))
+    return f1;
+}
     // create Date object for current location
 var date = new Date();
 
@@ -56,6 +64,15 @@ var sheloveshim = false;
         case 0:
             sheloveshim = true;
             weekday = "Sunday";
+            break;
+    }
+
+    switch(Math.abs(DateDiff(new Date(PolandTime.getFullYear()), PolandTime) % 2)){
+        case 0:
+            sheloveshim = true;
+            break;
+        case 1:
+            sheloveshim = false;
             break;
     }
         document.getElementById("date").innerHTML = weekday + "<br>("+ PolandTime +")";
